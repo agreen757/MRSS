@@ -420,8 +420,8 @@ module.exports = function (grunt) {
       },
       github: {
           options: {
-              remote: 'origin',
-              branch: 'master'
+              remote: 'master',
+              branch: 'origin'
           }
       }
     },
