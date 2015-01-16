@@ -1,6 +1,6 @@
 // Generated on 2015-01-15 using generator-angular-fullstack 2.0.13
 'use strict';
-
+var pkg = require('./package.json')
 module.exports = function (grunt) {
   var localConfig;
   try {
@@ -28,6 +28,18 @@ module.exports = function (grunt) {
 
     // Project settings
     pkg: grunt.file.readJSON('package.json'),
+    shipit:{
+      options: {
+          workspace: '/tmp/mrss-workspace',
+          deployTo: '/usr/src/mrss',
+          repositoryUrl: pkg.repository.url,
+          ignores: ['.git'],
+          keepReleases: 3
+      },
+        staging: {
+            servers: ['agreen@54.84.17.96']
+        }
+    },
     yeoman: {
       // configurable paths
       client: require('./bower.json').appPath || 'client',
@@ -735,4 +747,15 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  /**
+   * Start project on the remote server.
+   */
+
+  grunt.registerTask('start', function () {
+    var done = this.async();
+    var current = grunt.config('shipit.options.deployTo') + '/current';
+    grunt.shipit.remote('cd ' + current + '&& npm start', done);
+  });
+    
+  grunt.loadNpmTasks('grunt-shipit');
 };
