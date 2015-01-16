@@ -747,15 +747,12 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
-  /**
-   * Start project on the remote server.
-   */
 
   grunt.registerTask('start', function () {
     var done = this.async();
     var current = grunt.config('shipit.options.deployTo') + '/current';
     grunt.shipit.remote('cd ' + current + '&& npm install && pkill MRSS && npm start', done);
-  });
+  });   
     
   grunt.loadNpmTasks('grunt-shipit');
 };
