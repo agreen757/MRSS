@@ -751,7 +751,8 @@ module.exports = function (grunt) {
   grunt.registerTask('start', function () {
     var done = this.async();
     var current = grunt.config('shipit.options.deployTo') + '/current';
-    grunt.shipit.remote('cd ' + current + ' && pkill MRSS && npm start', done);
+    console.log("THIS IS THE LOCATION "+grunt.config('shipit.options.deployTo'))
+    grunt.shipit.remote('cd ' + current + ' && npm install && npm start', done);
   });   
     
   grunt.loadNpmTasks('grunt-shipit');
