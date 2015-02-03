@@ -752,7 +752,7 @@ module.exports = function (grunt) {
     var done = this.async();
     var current = grunt.config('shipit.options.deployTo') + '/current';
     console.log("THIS IS THE LOCATION "+grunt.config('shipit.options.deployTo'))
-    grunt.shipit.remote('cd ' + current + ' && npm install && npm start', done);
+    grunt.shipit.remote('cd ' + current + ' && npm install && pkill MRSS && npm start', done);
   });   
     
   grunt.loadNpmTasks('grunt-shipit');
