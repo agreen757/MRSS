@@ -1,0 +1,9 @@
+doctype xml
+rss(version='2.0')
+    channel
+        title #{feed.title}
+        description #{feed.description}
+    each item in feed.items
+        item
+            title !{item.title}
+            media:content
