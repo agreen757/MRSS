@@ -1,15 +1,10 @@
 //Serving the mrss feed
 
-<<<<<<< HEAD
 var Feed = require('rss')
-=======
-var Feed = require('feed')
->>>>>>> e69f24340b640eb1eff47ad8e20670dc22fe0126
 
 //Example information
 
 var info = [{
-<<<<<<< HEAD
             title: "Harlem Shake is for Lovers",
             link: "link",
             description: "some description",
@@ -25,36 +20,10 @@ exports.getFeed = function(cb){
         image: 'http://example.com/logo',
         copyright: '@Copyright INDMUSIC inc.  All rights reserved',
         author: 'INDMUSIC'
-=======
-            title: "Title1",
-            link: "link",
-            description: "some description",
-            content: "video"
-            },
-            {title: "Title2",
-            link: "link2",
-             description: "some description",
-            content:"video"}]
-
-exports.getFeed = function(cb){
-    var feed = new Feed({
-        title: 'Test feed',
-        description: 'this is a test feed',
-        link: 'http://example.com',
-        image: 'http://example.com/logo',
-        copyright: '@Copyright whatever.co.  All rights reserved',
-        
-        author: {
-            name: 'Adrian Green',
-            email: 'adrian@indmusicnetwork.com',
-            link: 'http://www.indmusicnetwork.com'
-        }
->>>>>>> e69f24340b640eb1eff47ad8e20670dc22fe0126
     })
     
     for(var i in info){
         //console.log(info[i])
-<<<<<<< HEAD
         feed.item({
             title: info[i].title,
             link: info[i].link,
@@ -68,15 +37,4 @@ exports.getFeed = function(cb){
     console.log(feed)
     var feedfin = feed.xml()
     return cb(null,feedfin)
-=======
-        feed.addItem({
-            title: info[i].title,
-            link: info[i].link,
-            description: info[i].description,
-            content: info[i].content
-        })
-    }
-    console.log(feed)
-    return cb(null,feed)
->>>>>>> e69f24340b640eb1eff47ad8e20670dc22fe0126
 }
