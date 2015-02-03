@@ -14,8 +14,12 @@ var cookieParser = require('cookie-parser');
 var errorHandler = require('errorhandler');
 var path = require('path');
 var config = require('./environment');
+<<<<<<< HEAD
 var getFeed = require('./mrss/mrss.js');
 var fs = require('fs');
+=======
+var getFeed = require('./mrss/mrss.js')
+>>>>>>> e69f24340b640eb1eff47ad8e20670dc22fe0126
 
 module.exports = function(app) {
   var env = app.get('env');
@@ -45,7 +49,12 @@ module.exports = function(app) {
     app.get('/rss', function(req,res){
         getFeed.getFeed(function(err,feed){
             res.set('Content-Type', 'text/xml');
+<<<<<<< HEAD
             res.send(feed)
+=======
+            
+            res.send(feed.render('rss-2.0'))
+>>>>>>> e69f24340b640eb1eff47ad8e20670dc22fe0126
         })
     })
   }

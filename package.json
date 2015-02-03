@@ -24,7 +24,10 @@
   },
   "devDependencies": {
     "connect-livereload": "~0.4.0",
+<<<<<<< HEAD
     "fluent-ffmpeg": "^2.0.0-rc3",
+=======
+>>>>>>> e69f24340b640eb1eff47ad8e20670dc22fe0126
     "grunt": "~0.4.4",
     "grunt-angular-templates": "^0.5.4",
     "grunt-asset-injector": "^0.1.0",
