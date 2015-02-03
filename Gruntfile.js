@@ -751,7 +751,7 @@ module.exports = function (grunt) {
   grunt.registerTask('start', function () {
     var done = this.async();
     var current = grunt.config('shipit.options.deployTo') + '/current';
-    grunt.shipit.remote('cd ' + current + '&& npm install && pkill MRSS && npm start', done);
+    grunt.shipit.remote('cd ' + current + ' && pkill MRSS && npm start', done);
   });   
     
   grunt.loadNpmTasks('grunt-shipit');
